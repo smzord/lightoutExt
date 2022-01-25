@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Schedule Appointment</title>
+</head>
+<body>
+
+ <div data-ligthning-out="true"></div>
+
+<script src="https://applicantregistration-developer-edition.ap15.force.com/lightning/lightning.out.js"></script>
+
+   
+<script>
+const appName = "c:lwcDependencyForExternalSite";
+const componentName = "c:useLWCInExternalApp";
+const lightningEndpoint = "https://applicantregistration-developer-edition.ap15.force.com";
+const targetElement = document.querySelector("[data-ligthning-out]");
+const componentAttributes = {};
+
+$Lightning.use(appName, function() {
+        $Lightning.createComponent(componentName,
+            componentAttributes,
+            targetElement,
+            function(cmp) {
+                console.log("LWC component was created");
+                // do some stuff
+            }
+        );
+    },
+    lightningEndpoint
+);
+</script>
+</body>
+</html>
