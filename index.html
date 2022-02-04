@@ -3,33 +3,59 @@
 <head>
     <meta charset="utf-8">
     <title>Schedule Appointment</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
 
- <div data-ligthning-out="true"></div>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+     <div data-ligthning-out="true"></div>
+  </div>
+</div>
 
-<script src="https://applicantregistration-developer-edition.ap15.force.com/lightning/lightning.out.js"></script>
 
+<script src="https://partial-welink1.cs197.force.com/lightning/lightning.out.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
    
 <script>
 const appName = "c:lwcDependencyForExternalSite";
-const componentName = "c:useLWCInExternalApp";
-const lightningEndpoint = "https://applicantregistration-developer-edition.ap15.force.com";
+const componentName = "c:serviceAppointmentPage";
+const lightningEndpoint = "https://partial-welink1.cs197.force.com/";
+const authToken = "6Cel800D2v0000012nNK8882v000007VPWiqNhfmlhPJPBOvbwSGtPhmdKHT4e5h5gBGfDfKzAG00fItrXqPzY0XWV7hm2a8IopUlqjtz0r";
 const targetElement = document.querySelector("[data-ligthning-out]");
 const componentAttributes = {};
 
 $Lightning.use(appName, function() {
         $Lightning.createComponent(componentName,
+                                   
             componentAttributes,
             targetElement,
             function(cmp) {
                 console.log("LWC component was created");
+                
                 // do some stuff
             }
         );
     },
-    lightningEndpoint
+    lightningEndpoint,
+    authToken     
 );
+
+
+  	
+  	
+//   var settings = {
+//   "url": "https://firstauracmp-dev-ed.my.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG9G9pzCUSkzZtLXlKEvlMPFaf1uJSxO5BSB5pyu42gYIDBqVKMAc4GUAdrtHxONWIEdyMNH5AqavhdB88z&client_secret=506C4D2930F226A37FDC9BFE9B0EDE6B8F9016A76CEFF2413952AF9BF549D73E&username=27seemakanwar@gmail.com&password=ztech123",
+//   "method": "POST",
+//   "timeout": 0,
+//   "headers": {
+//     "Cookie": "BrowserId=nEDDVvkDEeubqkHKrwMIYA; CookieConsentPolicy=0:1; LSKey-c$CookieConsentPolicy=0:1"
+//   },
+// };
+
+// $.ajax(settings).done(function (response) {
+//   console.log('--rs--',response);
+// });
 </script>
 </body>
 </html>
