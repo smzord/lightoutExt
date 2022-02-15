@@ -22,13 +22,15 @@
 			$.ajax({
 				type: 'POST',
 				headers: { 
+					"Access-Control-Allow-Headers": "x-requested-with", 
+					"Access-Control-Allow-Headers": "*",
 					"Authorization":"Bearer "+accTok,
 					'Accept': 'application/json',
 					'Content-Type': 'application/json' 
 				},
 				url: root+"services/apexrest/scheduleServiceAppointment",
 				data: {"servId" : "08p04000000JQAFAA4"},
-				dataType:'text',
+				dataType:'json',
 				cache:false,
 				success: function(res) { 
 					console.log(res);
