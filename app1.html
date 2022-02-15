@@ -31,7 +31,7 @@
 					console.log(res);
 				},
 				error:function(err){
-					console.error(err.responseText);
+					console.error(JSON.parse(err.responseText));
 				}
 			});
 		}
