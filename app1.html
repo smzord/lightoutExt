@@ -25,8 +25,9 @@
 					'Content-Type': 'application/json' 
 				},
 				url: root+"services/apexrest/scheduleServiceAppointment",
-				data: {servId : "08p04000000JQAFAA4"},
-				dataType: "json",
+				data: {"servId" : "08p04000000JQAFAA4"},
+				dataType:'jsonp',
+				cache:false,
 				success: function(res) { 
 					console.log(res);
 				},
