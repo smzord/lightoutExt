@@ -21,12 +21,12 @@
 			$.ajax({
 				type: 'POST',
 				headers: { 
-					'Accept': 'application/json',
-					'Content-Type': 'application/json' 
+					'Accept': 'application/text',
+					'Content-Type': 'application/text' 
 				},
 				url: root+"services/apexrest/scheduleServiceAppointment",
 				data: {"servId" : "08p04000000JQAFAA4"},
-				dataType:'jsonp',
+				dataType:'json',
 				cache:false,
 				success: function(res) { 
 					console.log(res);
