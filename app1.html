@@ -19,26 +19,23 @@
 		var root = 'https://partial-welink1.cs197.force.com/';
 		var accTok = "6Cel800D040000008grq8880400000003SnJhRDnKp02bZeP3wDQywhADwd2YzpiF9lPnSfGFlF4JLtijGzHyji3fvEEo035IZOGkW8pmbZ";
 		function bookApp(e){
-			$.ajax({
-				type: 'POST',
-				headers: { 
-					"Access-Control-Allow-Headers": "x-requested-with", 
-					"Access-Control-Allow-Headers": "*",
-					"Authorization":"Bearer "+accTok,
-					'Accept': 'application/json',
-					'Content-Type': 'application/json' 
+			var settings = {
+				"async": true,
+				"crossDomain": true,
+				"url": "https://partial-welink1.cs197.force.com/services/apexrest/scheduleServiceAppointment",
+				"method": "POST",
+				"headers": {
+				  "authorization": "Bearer 00D040000008grq!AR4AQFF8e9p4ayrRsyLtKYR1zNlvmSJ8NZAgpbwaB4khPN7O3QYrmHLw0jTza0pdDAZrqqdXcP3hNJ2VLVM8r7Doiy1nhwQa",
+				  "content-type": "application/json",
+				  "cache-control": "no-cache",
 				},
-				url: root+"services/apexrest/scheduleServiceAppointment",
-				data: {"servId" : "08p04000000JQAFAA4"},
-				dataType:'json',
-				cache:false,
-				success: function(res) { 
-					console.log(res);
-				},
-				error:function(err){
-					console.error(err);
-				}
-			});
+				"processData": false,
+				"data": "{\n\t\"servId\":\"08p04000000JQAFAA4\"\n}"
+			  }
+			  
+			  $.ajax(settings).done(function (response) {
+				console.log(response);
+			  });
 		}
 	</script>
 </body>
