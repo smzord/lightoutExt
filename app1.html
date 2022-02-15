@@ -20,6 +20,10 @@
 		function bookApp(e){
 			$.ajax({
 				type: 'POST',
+				headers: { 
+					'Accept': 'application/json',
+					'Content-Type': 'application/json' 
+				},
 				url: root+"services/apexrest/scheduleServiceAppointment",
 				data: {"servId" : "08p04000000JQAFAA4"},
 				dataType: "text",
